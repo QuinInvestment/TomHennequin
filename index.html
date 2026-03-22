@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tom Hennequin — Ingénieur Financier | Structuration</title>
+  <meta name="description" content="Tom Hennequin, étudiant ingénieur à l'ESILV, spécialisation Ingénierie Financière. Orienté vers la structuration de produits financiers." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="pdf/favicon.ico" sizes="any" />
+</head>
+<body>
+
+  <!-- CURSOR -->
+  <div class="cursor-dot" id="cursorDot"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-brand">
+        <span class="brand-monogram">TH</span>
+        <span class="brand-name">Tom <strong>Hennequin</strong></span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about"      class="nav-link">Profil</a></li>
+        <li><a href="#expertise"  class="nav-link">Expertise</a></li>
+        <li><a href="#experience" class="nav-link">Expérience</a></li>
+        <li><a href="#terminal"   class="nav-link">Projets</a></li>
+        <li><a href="#marches"    class="nav-link">Marchés</a></li>
+        <li><a href="#contact"    class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-right">
+        <a href="pdf/CV_Hennequin_Tom.pdf" target="_blank" class="nav-cv-btn">
+          <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1v7M3 6l3.5 3.5L10 6M2 11h9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          CV
+        </a>
+        <button class="nav-burger" id="burger" aria-label="Menu"><span></span><span></span></button>
+      </div>
+    </div>
+    <div class="nav-progress" id="navProgress"></div>
+  </nav>
+
+  <!-- MOBILE OVERLAY -->
+  <div class="mobile-overlay" id="mobileOverlay">
+    <button class="mob-close" id="mobClose" aria-label="Fermer">✕</button>
+    <nav class="mobile-nav">
+      <a href="#about"      class="mob-link">01 — Profil</a>
+      <a href="#expertise"  class="mob-link">02 — Expertise</a>
+      <a href="#experience" class="mob-link">03 — Expérience</a>
+      <a href="#terminal"   class="mob-link">04 — Projets</a>
+      <a href="#marches"    class="mob-link">05 — Marchés</a>
+      <a href="#contact"    class="mob-link">06 — Contact</a>
+    </nav>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <canvas class="hero-canvas" id="heroCanvas"></canvas>
+    <div class="hero-noise"></div>
+
+    <div class="hero-content container">
+      <div class="hero-left">
+        <div class="hero-badge" data-aos>
+          <span class="badge-dot"></span>
+          Disponible · Stage &amp; Alternance 2026
+        </div>
+
+        <h1 class="hero-title" data-aos data-delay="100">
+          <span class="ht-name">Tom Hennequin</span>
+          <span class="ht-role">Ingénieur <em>Financier</em></span>
+          <span class="ht-spec">Structuration &amp; Dérivés</span>
+        </h1>
+
+        <p class="hero-desc" data-aos data-delay="200">
+          Étudiant à l'<strong>ESILV · La Défense</strong>, spécialisation Ingénierie Financière.
+          Double diplôme visé avec <strong>CentraleSupélec</strong>.
+          Passionné par les dérivés equity-linked, la modélisation de payoff
+          et les produits structurés.
+        </p>
+
+        <div class="hero-actions" data-aos data-delay="300">
+          <a href="#contact" class="btn-primary">
+            Me contacter
+            <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M2.5 7.5h10M7.5 3l5 4.5-5 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a href="pdf/CV_Hennequin_Tom.pdf" target="_blank" class="btn-outline">
+            <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1v7M3 6l3.5 3.5L10 6M2 11h9" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Télécharger CV
+          </a>
+        </div>
+
+        <div class="hero-stats" data-aos data-delay="400">
+          <div class="hs-item"><div class="hs-val">ESILV</div><div class="hs-lbl">École d'ingénieurs</div></div>
+          <div class="hs-sep"></div>
+          <div class="hs-item"><div class="hs-val">Bac+5</div><div class="hs-lbl">Diplôme visé</div></div>
+          <div class="hs-sep"></div>
+          <div class="hs-item"><div class="hs-val">SG</div><div class="hs-lbl">Stage structuration</div></div>
+          <div class="hs-sep"></div>
+          <div class="hs-item"><div class="hs-val">4</div><div class="hs-lbl">Langues</div></div>
+        </div>
+      </div>
+
+      <div class="hero-right" data-aos data-delay="150">
+        <div class="terminal-widget">
+          <div class="tw-header">
+            <div class="tw-dots"><span class="twd twd-r"></span><span class="twd twd-y"></span><span class="twd twd-g"></span></div>
+            <span class="tw-title">tom_hennequin.sh</span>
+          </div>
+          <div class="tw-body">
+            <div class="tw-line"><span class="tw-p">$</span> <span class="tw-c">load --profile="Tom Hennequin"</span></div>
+            <div class="tw-line tw-ok">✓ Profil ingénieur financier chargé</div>
+            <div class="tw-line tw-space"></div>
+            <div class="tw-line"><span class="tw-p">$</span> <span class="tw-c">show --fields=all</span></div>
+            <div class="tw-line tw-k">École     <span class="tw-v">ESILV · Ingénierie Financière</span></div>
+            <div class="tw-line tw-k">Prépa     <span class="tw-v">Maths·Physique · Henri-Poincaré</span></div>
+            <div class="tw-line tw-k">Stage     <span class="tw-v">Société Générale · Structuration</span></div>
+            <div class="tw-line tw-k">Python    <span class="tw-v">Quantitatif · Finance · ML</span></div>
+            <div class="tw-line tw-k">Bloomberg <span class="tw-v">Terminal · BMC · BQL</span></div>
+            <div class="tw-line tw-k">MatLab    <span class="tw-v">Modélisation · Simulation</span></div>
+            <div class="tw-line tw-k">Langues   <span class="tw-v">FR · EN · DE · LU</span></div>
+            <div class="tw-line tw-space"></div>
+            <div class="tw-line"><span class="tw-p">$</span> <span class="tw-c">target --role="Structuration"<span class="tw-blink">_</span></span></div>
+          </div>
+        </div>
+
+        <div class="chip chip-1">
+          <svg width="12" height="12" viewBox="0 0 12 12"><path d="M6 1l1.2 3.6H11L8 7l1.2 3.6L6 8.5l-3.2 2L4 7 1 4.6h3.8L6 1z" fill="#f59e0b"/></svg>
+          Bac Mention Très Bien
+        </div>
+        <div class="chip chip-2">
+          <svg width="11" height="11" viewBox="0 0 11 11"><circle cx="5.5" cy="5.5" r="4.5" fill="none" stroke="#22d3ee" stroke-width="1.3"/><path d="M3.5 5.5l1.5 1.5L8 4" stroke="#22d3ee" stroke-width="1.3" stroke-linecap="round"/></svg>
+          Bloomberg Terminal
+        </div>
+        <div class="chip chip-3">
+          <span>🇫🇷</span><span>🇬🇧</span><span>🇩🇪</span><span>🇱🇺</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-cue">
+      <div class="sc-mouse"><div class="sc-wheel"></div></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section bg-light" id="about">
+    <div class="container">
+      <div class="slabel" data-aos><span class="sn">01</span><span class="sl">Profil</span></div>
+      <div class="about-grid">
+        <div data-aos data-delay="100">
+          <h2 class="sh2">Ingénieur en devenir,<br><em>financier dans l'âme</em></h2>
+          <p class="ap">
+            Après une CPGE Maths &amp; Physique au lycée Henri-Poincaré (Nancy),
+            j'intègre l'<strong>ESILV (École Supérieure d'Ingénieurs Léonard-de-Vinci)</strong>
+            à La Défense avec une spécialisation en <strong>Ingénierie Financière</strong>.
+          </p>
+          <p class="ap">
+            Mon objectif : les métiers de la <strong>structuration de produits financiers</strong>
+            et des dérivés. Je m'intéresse à la modélisation de payoff, aux stratégies equity-linked
+            et à l'analyse quantitative. Je vise un <strong>double diplôme CentraleSupélec</strong>
+            pour renforcer mes bases en mathématiques appliquées.
+          </p>
+          <p class="ap">
+            Rigueur analytique, curiosité pour les marchés et sens du résultat
+            sont les moteurs de ma démarche.
+          </p>
+          <div class="tag-cloud">
+            <span>Dérivés equity-linked</span><span>Modélisation payoff</span>
+            <span>Mathématiques financières</span><span>Python quant</span>
+            <span>Bloomberg</span><span>MatLab</span><span>C# / C++</span>
+            <span>Lean / 5S</span>
+          </div>
+        </div>
+
+        <div data-aos data-delay="200">
+          <!-- Education -->
+          <div class="edu-card">
+            <div class="ec-header">Formation</div>
+            <div class="ec-item ec-active">
+              <div class="ec-dot"></div>
+              <div class="ec-body">
+                <div class="ec-period">Sept. 2025 — Aujourd'hui</div>
+                <div class="ec-school">ESILV · La Défense, Paris</div>
+                <div class="ec-title">Diplôme d'ingénieur · <strong>Ingénierie Financière</strong></div>
+                <div class="ec-sub">Double diplôme CentraleSupélec visé</div>
+              </div>
+            </div>
+            <div class="ec-item">
+              <div class="ec-dot"></div>
+              <div class="ec-body">
+                <div class="ec-period">Sept. 2024 — Juil. 2025</div>
+                <div class="ec-school">Lycée Henri-Poincaré · Nancy</div>
+                <div class="ec-title">CPGE · <strong>Mathématiques &amp; Physique</strong></div>
+              </div>
+            </div>
+            <div class="ec-item">
+              <div class="ec-dot"></div>
+              <div class="ec-body">
+                <div class="ec-period">Sept. 2021 — Juil. 2024</div>
+                <div class="ec-school">Lycée Hélène Boucher · Thionville</div>
+                <div class="ec-title">Baccalauréat · <strong>Mention Très Bien</strong></div>
+                <div class="ec-sub">Spé : Maths &amp; Physique · Option Maths Expertes</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Languages -->
+          <div class="lang-card">
+            <div class="lc-header">Langues</div>
+            <div class="lc-grid">
+              <div class="lc-row"><span class="lc-flag">🇫🇷</span><span class="lc-name">Français</span><div class="lc-bar"><div class="lc-fill" data-w="100"></div></div><span class="lc-lv">Natif</span></div>
+              <div class="lc-row"><span class="lc-flag">🇬🇧</span><span class="lc-name">Anglais</span><div class="lc-bar"><div class="lc-fill" data-w="85"></div></div><span class="lc-lv">Courant</span></div>
+              <div class="lc-row"><span class="lc-flag">🇩🇪</span><span class="lc-name">Allemand</span><div class="lc-bar"><div class="lc-fill" data-w="70"></div></div><span class="lc-lv">Avancé</span></div>
+              <div class="lc-row"><span class="lc-flag">🇱🇺</span><span class="lc-name">Luxembourgeois</span><div class="lc-bar"><div class="lc-fill" data-w="75"></div></div><span class="lc-lv">Avancé</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERTISE -->
+  <section class="section bg-dark" id="expertise">
+    <div class="container">
+      <div class="slabel slabel-light" data-aos><span class="sn">02</span><span class="sl">Expertise</span></div>
+      <h2 class="sh2 sh2-light" data-aos data-delay="50">Compétences techniques<br><em>&amp; financières</em></h2>
+
+      <div class="skills-layout">
+        <div class="radar-wrap" data-aos data-delay="100">
+          <canvas id="radarChart" width="320" height="320"></canvas>
+          <div class="radar-label">Profil de compétences</div>
+        </div>
+
+        <div class="sk-cards" data-aos data-delay="150">
+          <div class="sk-card">
+            <div class="sk-ico">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M2 13l4-4 3 3 5-7" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/><rect x="1" y="1" width="16" height="16" rx="3" stroke="currentColor" stroke-width="1.4"/></svg>
+            </div>
+            <div class="sk-cat">Finance quantitative</div>
+            <div class="sk-tags"><span>Dérivés equity-linked</span><span>Payoff modeling</span><span>Produits structurés</span><span>Scénarios</span><span>Reporting</span></div>
+          </div>
+          <div class="sk-card">
+            <div class="sk-ico">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M5 7l-4 2 4 2M13 7l4 2-4 2M10 4l-2 10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+            </div>
+            <div class="sk-cat">Programmation</div>
+            <div class="sk-tags"><span>Python</span><span>MatLab</span><span>C# / C++</span><span>Java</span><span>HTML/CSS/JS</span></div>
+          </div>
+          <div class="sk-card">
+            <div class="sk-ico">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7" stroke="currentColor" stroke-width="1.4"/><path d="M9 5v4l2.5 2" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+            </div>
+            <div class="sk-cat">Outils professionnels</div>
+            <div class="sk-tags"><span>Bloomberg</span><span>SolidWorks</span><span>Excel avancé</span><span>G-code</span><span>Lean 5S</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="prog-section" data-aos data-delay="200">
+        <div class="prog-title">Niveau de maîtrise</div>
+        <div class="prog-grid">
+          <div class="prog-item"><div class="prog-top"><span>Python · Finance quantitative</span><span class="pp">82%</span></div><div class="prog-bar"><div class="prog-fill" data-w="82" style="--c:#22d3ee"></div></div></div>
+          <div class="prog-item"><div class="prog-top"><span>Bloomberg Terminal</span><span class="pp">78%</span></div><div class="prog-bar"><div class="prog-fill" data-w="78" style="--c:#a78bfa"></div></div></div>
+          <div class="prog-item"><div class="prog-top"><span>MatLab · Modélisation</span><span class="pp">75%</span></div><div class="prog-bar"><div class="prog-fill" data-w="75" style="--c:#34d399"></div></div></div>
+          <div class="prog-item"><div class="prog-top"><span>C# / C++ / Java</span><span class="pp">70%</span></div><div class="prog-bar"><div class="prog-fill" data-w="70" style="--c:#f59e0b"></div></div></div>
+          <div class="prog-item"><div class="prog-top"><span>Structuration · Analyse financière</span><span class="pp">80%</span></div><div class="prog-bar"><div class="prog-fill" data-w="80" style="--c:#f472b6"></div></div></div>
+          <div class="prog-item"><div class="prog-top"><span>SolidWorks · G-code</span><span class="pp">65%</span></div><div class="prog-bar"><div class="prog-fill" data-w="65" style="--c:#fb923c"></div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="section bg-light" id="experience">
+    <div class="container">
+      <div class="slabel" data-aos><span class="sn">03</span><span class="sl">Expérience</span></div>
+      <h2 class="sh2" data-aos data-delay="50">Parcours &amp;<br><em>réalisations</em></h2>
+
+      <div class="exp-grid">
+        <!-- SG featured -->
+        <div class="exp-card exp-featured" data-aos data-delay="100">
+          <div class="exp-head">
+            <div class="exp-logo sg">SG</div>
+            <div class="exp-meta">
+              <div class="exp-company">Société Générale</div>
+              <div class="exp-loc">La Défense, Paris</div>
+            </div>
+            <span class="exp-tag exp-tag-fin">Finance</span>
+          </div>
+          <div class="exp-role">Structuration Produits Structurés</div>
+          <div class="exp-period">
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><rect x="0.5" y="1.5" width="10" height="9" rx="1.5" stroke="currentColor" stroke-width="1.1"/><path d="M3 1v2M8 1v2M0.5 5h10" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/></svg>
+            Décembre 2025
+          </div>
+          <p class="exp-desc">Stage au sein de l'équipe structuration. Analyse de produits dérivés equity-linked et suivi de la performance des produits structurés en environnement professionnel.</p>
+          <ul class="exp-ul">
+            <li>Analyse de <strong>dérivés equity-linked</strong> — sous-jacents et paramètres de marché</li>
+            <li><strong>Modélisation de payoff</strong> — simulation de scénarios et visualisation des rendements</li>
+            <li>Suivi de performance, analyse des indicateurs et <strong>reporting régulier</strong></li>
+          </ul>
+          <div class="exp-skills"><span>Dérivés</span><span>Payoff modeling</span><span>Reporting</span><span>Market analysis</span></div>
+        </div>
+
+        <!-- Keter -->
+        <div class="exp-card" data-aos data-delay="150">
+          <div class="exp-head">
+            <div class="exp-logo keter">KL</div>
+            <div class="exp-meta">
+              <div class="exp-company">KETER LUXEMBOURG</div>
+              <div class="exp-loc">Differdange, Luxembourg</div>
+            </div>
+            <span class="exp-tag exp-tag-ops">Production</span>
+          </div>
+          <div class="exp-role">Ouvrier Production Polyvalent</div>
+          <div class="exp-period">
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><rect x="0.5" y="1.5" width="10" height="9" rx="1.5" stroke="currentColor" stroke-width="1.1"/><path d="M3 1v2M8 1v2M0.5 5h10" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/></svg>
+            Juil. 2025 — Sept. 2025
+          </div>
+          <p class="exp-desc">Expérience opérationnelle en environnement industriel automatisé, avec responsabilités de pilotage, contrôle qualité et amélioration continue.</p>
+          <ul class="exp-ul">
+            <li>Pilotage de <strong>lignes automatisées</strong> — suivi paramètres machines</li>
+            <li>Contrôle qualité et analyse de conformité (mesures dimensionnelles)</li>
+            <li>Amélioration continue — méthodes <strong>Lean / 5S</strong></li>
+          </ul>
+          <div class="exp-skills"><span>Lean</span><span>5S</span><span>Contrôle qualité</span><span>Production</span></div>
+        </div>
+
+        <!-- Mantu -->
+        <div class="exp-card exp-cert" data-aos data-delay="200">
+          <div class="exp-head">
+            <div class="exp-logo mantu">M</div>
+            <div class="exp-meta">
+              <div class="exp-company">Mantu Group</div>
+              <div class="exp-loc">Certificat professionnel</div>
+            </div>
+            <span class="exp-tag exp-tag-cert">Certifié</span>
+          </div>
+          <div class="exp-role">The Mantu Manager Program</div>
+          <div class="exp-period">
+            <svg width="11" height="11" viewBox="0 0 11 11" fill="none"><rect x="0.5" y="1.5" width="10" height="9" rx="1.5" stroke="currentColor" stroke-width="1.1"/><path d="M3 1v2M8 1v2M0.5 5h10" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/></svg>
+            Novembre 2025
+          </div>
+          <p class="exp-desc">Programme certifiant en Business Acquisition. Développement des compétences managériales et commerciales.</p>
+          <div class="exp-skills"><span>Business Acquisition</span><span>Management</span><span>Leadership</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJETS -->
+  <section class="section bg-dark" id="terminal">
+    <div class="container">
+      <div class="slabel slabel-light" data-aos><span class="sn">04</span><span class="sl">Projets</span></div>
+      <h2 class="sh2 sh2-light" data-aos data-delay="50">Quinterminal &amp;<br><em>projets tech-finance</em></h2>
+
+      <div class="proj-layout" data-aos data-delay="100">
+        <div class="proj-info">
+          <div class="proj-badge">Projet phare</div>
+          <h3 class="proj-name">Quinterminal</h3>
+          <p class="proj-desc">Terminal web de marché inspiré des environnements Bloomberg. Centralise le suivi multi-actifs, la lecture macro et la veille en temps réel dans une interface épurée.</p>
+          <div class="pf-list">
+            <div class="pf-row"><span class="pf-dot"></span>Indices majeurs, FX, taux, crypto</div>
+            <div class="pf-row"><span class="pf-dot"></span>VIX / V2X — radar risque et volatilité</div>
+            <div class="pf-row"><span class="pf-dot"></span>Flux news — marchés, aviation, maritime</div>
+            <div class="pf-row"><span class="pf-dot"></span>Trafic aérien live + carte maritime</div>
+            <div class="pf-row"><span class="pf-dot"></span>Branding, modules sur mesure, déploiement</div>
+          </div>
+          <div class="proj-tech"><span>HTML/CSS/JS</span><span>API REST</span><span>GitHub Pages</span><span>Chart.js</span></div>
+        </div>
+
+        <div class="proj-carousel">
+          <div class="qt-carousel" id="carousel">
+            <div class="qt-viewport" id="qtViewport" tabindex="0">
+              <div class="qt-track" id="qtTrack">
+                <figure class="qt-card"><div class="qt-media"><img src="photo/quinterminal-markets.png" alt="Marchés" loading="lazy"></div><figcaption class="qt-cap"><strong>Marchés</strong> · Indices, watchlists</figcaption></figure>
+                <figure class="qt-card"><div class="qt-media"><img src="photo/quinterminal-vol.png" alt="Volatilité" loading="lazy"></div><figcaption class="qt-cap"><strong>Volatilité</strong> · VIX, macro</figcaption></figure>
+                <figure class="qt-card"><div class="qt-media"><img src="photo/quinterminal-fx-rates.png" alt="FX & Taux" loading="lazy"></div><figcaption class="qt-cap"><strong>FX & Taux</strong> · Forex, yields</figcaption></figure>
+                <figure class="qt-card"><div class="qt-media"><img src="photo/quinterminal-news.png" alt="News" loading="lazy"></div><figcaption class="qt-cap"><strong>News</strong> · Flux thématiques</figcaption></figure>
+                <figure class="qt-card"><div class="qt-media"><img src="photo/quinterminal-air-traffic.png" alt="Aviation" loading="lazy"></div><figcaption class="qt-cap"><strong>Aviation</strong> · Vols live</figcaption></figure>
+                <figure class="qt-card"><div class="qt-media"><img src="photo/quinterminal-maritime.png" alt="Maritime" loading="lazy"></div><figcaption class="qt-cap"><strong>Maritime</strong> · Chokepoints</figcaption></figure>
+              </div>
+            </div>
+            <button class="qt-prev" aria-label="Précédent"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 4l-4 4 4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <button class="qt-next" aria-label="Suivant"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <div class="qt-dots" id="qtDots"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARCHÉS -->
+  <section class="section bg-light" id="marches">
+    <div class="container">
+      <div class="slabel" data-aos><span class="sn">05</span><span class="sl">Marchés &amp; Investissement</span></div>
+      <h2 class="sh2" data-aos data-delay="50">Suivi &amp;<br><em>performances</em></h2>
+      <p class="section-p" data-aos data-delay="80">Approche disciplinée : diversification, DCA, gestion rigoureuse du risque. Illustration de ma démarche analytique sur un portefeuille PEA.</p>
+
+      <!-- Ticker -->
+      <div class="ticker-wrap" data-aos data-delay="100">
+        <div class="ticker-track">
+          <div class="ti pos">CAC 40 <span>+0.82%</span></div><div class="ti pos">S&P 500 <span>+1.14%</span></div>
+          <div class="ti neg">DAX <span>-0.31%</span></div><div class="ti pos">EUR/USD <span>+0.22%</span></div>
+          <div class="ti pos">Gold <span>+0.56%</span></div><div class="ti neg">VIX <span>-2.40%</span></div>
+          <div class="ti pos">BTC <span>+3.21%</span></div><div class="ti neg">OIL WTI <span>-0.88%</span></div>
+          <div class="ti pos">NASDAQ <span>+1.67%</span></div><div class="ti neg">EUR/GBP <span>-0.15%</span></div>
+          <!-- duplicate -->
+          <div class="ti pos">CAC 40 <span>+0.82%</span></div><div class="ti pos">S&P 500 <span>+1.14%</span></div>
+          <div class="ti neg">DAX <span>-0.31%</span></div><div class="ti pos">EUR/USD <span>+0.22%</span></div>
+          <div class="ti pos">Gold <span>+0.56%</span></div><div class="ti neg">VIX <span>-2.40%</span></div>
+          <div class="ti pos">BTC <span>+3.21%</span></div><div class="ti neg">OIL WTI <span>-0.88%</span></div>
+          <div class="ti pos">NASDAQ <span>+1.67%</span></div><div class="ti neg">EUR/GBP <span>-0.15%</span></div>
+        </div>
+      </div>
+
+      <div class="charts-grid">
+        <!-- Main chart -->
+        <div class="chart-card chart-big" data-aos data-delay="100">
+          <div class="cc-header">
+            <span class="cc-title">Performance portefeuille PEA</span>
+            <div class="cc-tabs">
+              <button class="cc-tab active" data-chart="perf">Perf.</button>
+              <button class="cc-tab" data-chart="alloc">Allocation</button>
+              <button class="cc-tab" data-chart="risk">Risque</button>
+            </div>
+          </div>
+          <div class="cc-body">
+            <canvas id="perfChart"></canvas>
+            <canvas id="allocChart" style="display:none"></canvas>
+            <canvas id="riskChart" style="display:none"></canvas>
+          </div>
+          <div class="cc-footer">⚠ Données illustratives. Les performances passées ne préjugent pas des résultats futurs.</div>
+        </div>
+
+        <!-- KPI col -->
+        <div class="kpi-col">
+          <div class="kpi-card" data-aos data-delay="110">
+            <div class="kpi-lbl">Performance N-2</div>
+            <div class="kpi-val pos">+12,4%</div>
+            <div class="kpi-sub">Annuel · Marché haussier</div>
+            <svg class="kpi-spark" viewBox="0 0 80 24" preserveAspectRatio="none"><polyline points="0,22 20,18 40,12 60,7 80,2" stroke="#22d3ee" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+          </div>
+          <div class="kpi-card" data-aos data-delay="120">
+            <div class="kpi-lbl">Performance N-1</div>
+            <div class="kpi-val pos">+13,2%</div>
+            <div class="kpi-sub">Annuel · ETF diversifiés</div>
+            <svg class="kpi-spark" viewBox="0 0 80 24" preserveAspectRatio="none"><polyline points="0,20 20,15 40,10 60,6 80,2" stroke="#34d399" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
+          </div>
+          <div class="kpi-card kpi-feat" data-aos data-delay="130">
+            <div class="kpi-lbl">Annualisé · 2 ans</div>
+            <div class="kpi-val pos">+12,8%</div>
+            <div class="kpi-sub">Stratégie long terme · DCA</div>
+          </div>
+          <div class="kpi-card" data-aos data-delay="140">
+            <div class="kpi-lbl">Volatilité</div>
+            <div class="kpi-val">Modérée</div>
+            <div class="kpi-sub">Risque maîtrisé</div>
+          </div>
+        </div>
+
+        <!-- Method -->
+        <div class="method-card" data-aos data-delay="150">
+          <div class="mc-title">Méthode d'investissement</div>
+          <div class="mc-list">
+            <div class="mc-item"><span class="mc-n">01</span><div><strong>Diversification</strong><p>Multi-actifs · Éviter la concentration sectorielle</p></div></div>
+            <div class="mc-item"><span class="mc-n">02</span><div><strong>DCA</strong><p>Investissement progressif · Lissage des points d'entrée</p></div></div>
+            <div class="mc-item"><span class="mc-n">03</span><div><strong>Allocation stratégique</strong><p>Répartition cible adaptée au profil de risque</p></div></div>
+            <div class="mc-item"><span class="mc-n">04</span><div><strong>Discipline</strong><p>Décisions sur critères chiffrés · Pas d'émotionnel</p></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section bg-dark" id="contact">
+    <div class="container">
+      <div class="slabel slabel-light" data-aos><span class="sn">06</span><span class="sl">Contact</span></div>
+      <div class="contact-layout">
+        <div class="contact-left" data-aos data-delay="100">
+          <h2 class="sh2 sh2-light">Travaillons<br><em>ensemble</em></h2>
+          <p class="contact-p">Je recherche un stage ou alternance en <strong>structuration de produits financiers</strong>, dérivés ou ingénierie financière. N'hésitez pas à me contacter.</p>
+          <div class="ci-list">
+            <a href="mailto:tomhennequin27@gmail.com" class="ci-row">
+              <div class="ci-ico"><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><rect x="1" y="3" width="13" height="9" rx="2" stroke="currentColor" stroke-width="1.3"/><path d="M1 5l6.5 4.5L14 5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></div>
+              tomhennequin27@gmail.com
+            </a>
+            <a href="tel:0768454881" class="ci-row">
+              <div class="ci-ico"><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M4 1a1 1 0 00-1 1L2 5a1 1 0 00.3.7l2 2a9 9 0 002.5 2.5l2 1a1 1 0 001-.3l2-1.5a1 1 0 000-1.4l-1.5-1.5a1 1 0 00-1.4 0L8.4 8 7 6.6l.4-.4A1 1 0 008 5.8L8 4a1 1 0 00-1-1H5a1 1 0 00-1 1z" stroke="currentColor" stroke-width="1.3"/></svg></div>
+              07 68 45 48 81
+            </a>
+            <a href="https://linkedin.com/in/tom-hennequin" target="_blank" class="ci-row">
+              <div class="ci-ico"><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><rect x="1" y="1" width="13" height="13" rx="3" stroke="currentColor" stroke-width="1.3"/><path d="M4 7v4M4 4.5v.3M7 11V9c0-1.5 2.5-1.5 2.5 0v2M7 7v.8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/></svg></div>
+              linkedin.com/in/tom-hennequin
+            </a>
+            <div class="ci-row">
+              <div class="ci-ico"><svg width="15" height="15" viewBox="0 0 15 15" fill="none"><path d="M7.5 1a4.5 4.5 0 00-4.5 4.5C3 9 7.5 14 7.5 14S12 9 12 5.5A4.5 4.5 0 007.5 1z" stroke="currentColor" stroke-width="1.3"/><circle cx="7.5" cy="5.5" r="1.5" stroke="currentColor" stroke-width="1.3"/></svg></div>
+              Luxembourg &amp; Paris · La Défense
+            </div>
+          </div>
+          <a href="pdf/CV_Hennequin_Tom.pdf" target="_blank" class="cv-dl-btn">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1v8M3 6l4 4 4-4M2 12h10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Télécharger mon CV complet
+          </a>
+        </div>
+
+        <div class="contact-right" data-aos data-delay="150">
+          <form class="contact-form" id="contactForm">
+            <div class="cf-row">
+              <div class="cf-field">
+                <label for="nom">Nom complet</label>
+                <input type="text" id="nom" name="nom" placeholder="Jean Dupont" required autocomplete="name">
+              </div>
+              <div class="cf-field">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="j.dupont@banque.fr" required autocomplete="email">
+              </div>
+            </div>
+            <div class="cf-field">
+              <label for="org">Organisation</label>
+              <input type="text" id="org" name="org" placeholder="Société Générale, BNP Paribas…">
+            </div>
+            <div class="cf-field">
+              <label for="sujet">Sujet</label>
+              <select id="sujet" name="sujet">
+                <option value="">Sélectionner…</option>
+                <option>Stage · Structuration / Dérivés</option>
+                <option>Alternance · Ingénierie Financière</option>
+                <option>Collaboration · Quinterminal</option>
+                <option>Autre</option>
+              </select>
+            </div>
+            <div class="cf-field">
+              <label for="msg">Message</label>
+              <textarea id="msg" name="msg" rows="4" placeholder="Décrivez votre opportunité…" required></textarea>
+            </div>
+            <button type="submit" class="btn-primary btn-full" id="submitBtn">
+              <span>Envoyer le message</span>
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7 3l5 4-5 4" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="f-brand">
+        <span class="brand-monogram">TH</span>
+        <div><div class="f-name">Tom Hennequin</div><div class="f-sub">ESILV · Ingénierie Financière · La Défense</div></div>
+      </div>
+      <div class="f-copy">© <span id="year"></span> Tom Hennequin · Tous droits réservés</div>
+      <div class="f-links">
+        <a href="#about">Profil</a><a href="#expertise">Expertise</a><a href="#contact">Contact</a>
+        <a href="pdf/CV_Hennequin_Tom.pdf" target="_blank">CV</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
